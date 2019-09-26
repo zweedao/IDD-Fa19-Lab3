@@ -67,7 +67,7 @@ It seems to be linear.
 
 ### 2. Accelerometer
  
-**a. Include your accelerometer read-out code in your write-up.**
+**a. LED: Include your accelerometer read-out code in your write-up.**
 <pre><code>
 // Basic demo for accelerometer readings from Adafruit LIS3DH
 
@@ -155,6 +155,10 @@ void print_lcd(char line_1[], String line_2)
   lcd.print(line_2);
 }
 </code></pre>
+
+**a. OLED: Include your accelerometer read-out code in your write-up.**
+
+
 
 ### 3. IR Proximity Sensor
 
