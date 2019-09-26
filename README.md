@@ -288,7 +288,7 @@ void loop() {
 ### 1. Reading and writing values to the Arduino EEPROM
 
 **a. Does it matter what actions are assigned to which state? Why?**
-No, they are interchangeble. 
+Yes, the sequence of states matter. Because the potential metter will turn in certain direction.
 
 **b. Why is the code here all in the setup() functions and not in the loop() functions?**
 We don't need to constantly loop, just need to set it once. 
