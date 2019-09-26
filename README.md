@@ -20,7 +20,7 @@ For this lab, we will be experimenting with a variety of sensors, sending the da
 
 **How might you use this with only the parts in your kit? Show us your solution.**
 Just simply connect the 4 legs of RGB LED with proper ports. 
-[RGB led](/rgb_led.MOV)
+[RGB led video](/rgb_led.MOV)
 
 ## Part C. Voltage Varying Sensors  
 ### 1. FSR, Flex Sensor, Photo cell, Softpot
@@ -33,6 +33,7 @@ The graph looks kind of linear. The more force I apply, the more voltage value.
 
 **c. Can you change the LED fading code values so that you get the full range of output voltages from the LED when using your FSR?**
 I normalize the FSR values to be in the same range as LED values: `brightness = analogRead(A0)\*255/1024;`
+[FSR controlling LED video](/fsr_led.MOV)
 
 <pre><code>
 int led = 9;           // the PWM pin the LED is attached to
@@ -60,7 +61,9 @@ void loop() {
 
 **d. What resistance do you need to have in series to get a reasonable range of voltages from each sensor?**
 
+
 **e. What kind of relationship does the resistance have as a function of stimulus? (e.g., linear?)**
+
 
 ### 2. Accelerometer
  
