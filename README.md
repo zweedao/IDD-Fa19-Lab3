@@ -369,6 +369,7 @@ void loop() {
 ### 2. Design your logger
  
 **a. Insert here a copy of your final state diagram.**
+[State diagram](/state_diagram.JPG)
 
 ### 3. Create your data logger!
  
