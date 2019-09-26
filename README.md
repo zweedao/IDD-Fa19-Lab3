@@ -297,8 +297,13 @@ We don't need to constantly loop, just need to set it once.
 512 bytes
 
 **d. How would you get analog data from the Arduino analog pins to be byte-sized? How about analog data from the I2C devices?**
+Divides the reading by 4.
 
 **e. Alternately, how would we store the data if it were bigger than a byte? (hint: take a look at the [EEPROMPut](https://www.arduino.cc/en/Reference/EEPROMPut) example)**
+Move storage address to the next byte after float 'f':
+<pre><code>
+eeAddress += sizeof(float);
+</code></pre>
 
 **Upload your modified code that takes in analog values from your sensors and prints them back out to the Arduino Serial Monitor.**
 <pre><code>
@@ -358,7 +363,7 @@ void loop() {
   } 
   lastState = state;
   
-  Serial.println(analogRead(A3));
+  Serial.println(analogRead(A3)/4);
 }
 </code></pre>
 
