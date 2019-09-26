@@ -363,7 +363,6 @@ void loop() {
   } 
   lastState = state;
   
-  Serial.println(analogRead(A3)/4);
 }
 </code></pre>
 
