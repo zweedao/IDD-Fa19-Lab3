@@ -1,6 +1,6 @@
 # Data Logger (and using cool sensors!)
 
-*A lab report by John Q. Student.*
+*A lab report by Zwee Dao.*
 
 ## In The Report
 
@@ -19,9 +19,10 @@ For this lab, we will be experimenting with a variety of sensors, sending the da
 ## Part B. RGB LED
 
 **How might you use this with only the parts in your kit? Show us your solution.**
+Just simply connect the 4 legs of RGB LED with proper ports. 
+[RGB led](/rgb_led.MOV)
 
-## Part C. Voltage Varying Sensors 
- 
+## Part C. Voltage Varying Sensors  
 ### 1. FSR, Flex Sensor, Photo cell, Softpot
 
 **a. What voltage values do you see from your force sensor?**
@@ -31,6 +32,31 @@ For this lab, we will be experimenting with a variety of sensors, sending the da
 The graph looks kind of linear. The more force I apply, the more voltage value.
 
 **c. Can you change the LED fading code values so that you get the full range of output voltages from the LED when using your FSR?**
+I normalize the FSR values to be in the same range as LED values: `brightness = analogRead(A0)\*255/1024;`
+
+<pre><code>
+int led = 9;           // the PWM pin the LED is attached to
+int brightness = 0;    // how bright the LED is
+int fadeAmount = 5;    // how many points to fade the LED by
+
+
+void setup() {
+  // declare pin 9 to be an output:
+  pinMode(led, OUTPUT);
+  
+  // initialize the serial communication:
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println(analogRead(A0));
+  
+  // change the brightness for next time through the loop:
+  brightness = analogRead(A0)\*255/1024;
+  analogWrite(led, brightness);
+  delay(30);
+}
+</code></pre>
 
 **d. What resistance do you need to have in series to get a reasonable range of voltages from each sensor?**
 
